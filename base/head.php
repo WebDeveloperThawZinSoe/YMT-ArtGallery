@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +20,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <style>
     body {
         /* background: #eeeeee; */
@@ -159,14 +163,15 @@
         }
     }
     </style>
-   
+
 </head>
 
 <body>
 
     <?php
-  include_once "database.php";
-?>
+       
+        include_once "database.php";
+    ?>
 
     <!-- 
 

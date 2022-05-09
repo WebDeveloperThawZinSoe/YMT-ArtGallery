@@ -7,19 +7,27 @@
         <!-- Collection of nav links, forms, and other content for toggling -->
         <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
             <div class="navbar-nav">
-                <a href="#" class="nav-item nav-link">Home</a>
+                <a href="index.php" class="nav-item nav-link">Home</a>
                 <a href="#" class="nav-item nav-link">About</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-item nav-link dropdown-toggle" data-toggle="dropdown">Artits</a>
                     <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item">Web Design</a>
-                        <a href="#" class="dropdown-item">Web Development</a>
-                        <a href="#" class="dropdown-item">Graphic Design</a>
-                        <a href="#" class="dropdown-item">Digital Marketing</a>
+                    <?php
+                    $sql = "SELECT id,name FROM artist ORDER BY id DESC";
+                    $result = mysqli_query($database_connection, $sql);
+                    if($result){
+                        foreach($result as $r){
+                            ?>
+                                <a class="dropdown-item" href="artist-details.php?id='<?php echo $r['id'] ?>'" class="list-group-item list-group-item-action"><?php echo $r['name']; ?></a>
+                            <?php
+                        }
+                    }
+                ?>
+                     
                     </div>
                 </div>
                 <a href="#" class="nav-item nav-link">Portfolio</a>
-                <a href="#" class="nav-item nav-link">Contact</a>
+                <a href="contact.php" class="nav-item nav-link">Contact</a>
             </div>
             <div class="navbar-nav ml-auto">
                 <div class="navbar-form-wrapper">
@@ -36,10 +44,12 @@
                 </div>
                 <a href="https://www.facebook.com/yemyat.amz
 " target="_blank" class="nav-item nav-link"> <i class="fa fa-facebook"></i></a>
-                <a href="https://www.instagram.com/p/CdQsoM5vCrb/?igshid=YmMyMTA2M2Y="  target="_blank" class="nav-item nav-link"><i class="fa fa-instagram"></i></a>
-                <a href="mailto:ymtartgallery@gmail.com" target="_blank" class="nav-item nav-link"><i class="fa fa-envelope"></i></a>
+                <a href="https://www.instagram.com/p/CdQsoM5vCrb/?igshid=YmMyMTA2M2Y=" target="_blank"
+                    class="nav-item nav-link"><i class="fa fa-instagram"></i></a>
+                <a href="mailto:ymtartgallery@gmail.com" target="_blank" class="nav-item nav-link"><i
+                        class="fa fa-envelope"></i></a>
                 <a href="tel:+959403077739" target="_blank" class="nav-item nav-link"><i class="fa fa-phone"></i></a>
-                
+
             </div>
         </div>
     </div>

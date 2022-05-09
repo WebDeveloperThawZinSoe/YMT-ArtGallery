@@ -8,7 +8,7 @@
         <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
             <div class="navbar-nav">
                 <a href="index.php" class="nav-item nav-link">Home</a>
-                <a href="#" class="nav-item nav-link">About</a>
+                <a href="#" class="nav-item nav-link">Myint Naing</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-item nav-link dropdown-toggle" data-toggle="dropdown">Artits</a>
                     <div class="dropdown-menu">
@@ -26,7 +26,7 @@
                      
                     </div>
                 </div>
-                <a href="#" class="nav-item nav-link">Portfolio</a>
+                <a href="#" class="nav-item nav-link">Painting</a>
                 <a href="contact.php" class="nav-item nav-link">Contact</a>
             </div>
             <div class="navbar-nav ml-auto">

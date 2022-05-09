@@ -83,9 +83,9 @@ swal("Mail Send Success . Admin with will reply within 24hours.", "", "success")
                 laborum?
             </p>
             <p>
-                Phone : +959403077739 <br>
-                Email : thawzinsoe.dev@gmail.com <br>
-                Address : 9/689 , Shwepadar Street , Yangon . <br>
+                Phone : 09791946212 <br>
+                Email : ymtartgallery@gmail.com <br>
+                Address : No 517 / Shwe Sin (7) Street / 44 Ward / NorthDagon <br>
             </p>
 
             <p>

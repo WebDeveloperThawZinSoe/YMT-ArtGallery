@@ -106,7 +106,19 @@
 
 
     /* Create Artists */
-    if(isset($_POST[""])){
-        
+    if(isset($_POST["artists_create"])){
+       $username = htmlspecialchars($_POST["username"]);
+       $bio = htmlspecialchars($_POST["bio"]);
+       image_filter($_FILES["image"],"artists.php");
+        # $unique_file_name;
+        $sql = "INSERT INTO artist(name,image,bio) VALUES ('$username','$unique_file_name','$bio')";
+        $result = mysqli_query($database_connection,$sql);
+        if($result){
+            $_SESSION["success"] = "Artists Create  Success";
+            header("location:artists.php");
+        }else{ 
+            $_SESSION["error"] = "Artists Create  Fail";
+            header("location:artists.php");
+        }
     }
 ?>

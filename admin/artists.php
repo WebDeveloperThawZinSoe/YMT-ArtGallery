@@ -43,7 +43,7 @@
                     <div class="row">
                         <div class="col-md-12 ">
                             <div class="well">
-                                <form action="backend.php" method="post">
+                                <form enctype="multipart/form-data" action="backend.php" method="post">
                                     <div class="form-group">
                                         <label for="username">Name:</label>
                                         <input autoclear type="text" class="form-control" name="username"
@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="pwd">Image:</label>
-                                        <input autoclear type="file" name="image" required id="pwd">
+                                        <input  type="file" name="image" required id="pwd">
                                     </div>
 
                                     <!-- <div class="form-group">
@@ -60,10 +60,10 @@
                                             placeholder="Enter Biography"></textarea>
                                     </div> -->
 
-                                    <div id="editor">
-                                        <textarea autoclear class="form-control" name="bio" id="pwd"
+                                    <textarea autoclear class="form-control" name="bio" id="pwd"
                                                 placeholder="Enter Biography"></textarea>
-                                    </div>
+
+                                    
 
                                     <br> 
 

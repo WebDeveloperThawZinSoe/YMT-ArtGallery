@@ -25,4 +25,17 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
 </head>
+
+<?php
+  session_start();
+  include "database.php";
+
+  if(!isset($_SESSION['user']) || !isset($_SESSION['password'])){
+    header("location:login.php");
+  }
+
+  include_once "message.php";
+?>

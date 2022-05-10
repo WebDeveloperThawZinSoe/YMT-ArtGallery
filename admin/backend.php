@@ -12,6 +12,47 @@
        return $data;
     }
 
+    /* Image Filter */
+    function image_filter($image,$location){
+        $name = $image["name"];
+        $size = $image["size"];
+        $error = $image["error"];
+        $tmp_name = $image["tmp_name"];
+        $type = $image["type"];
+        $image_upload_location = "../image/upload/";
+        global $unique_file_name ;
+        $unique_file_name = rand(0,100) . "_" . $name;
+ 
+        if($error == 0){
+             if($size < 2000000){
+                 if($type == "image/png" || $type=="image/jpg" || $type =="image/jpeg" || $type == "image/gif"){
+                    move_uploaded_file($tmp_name , $image_upload_location . $unique_file_name);
+                    return $unique_file_name;
+                 }else{
+                     error_message("We only accept jpg png and gif",$location);
+                 }
+             }else{
+                 error_message("File is too big",$location);
+             }
+        }else{
+             error_message("File has error" , $location);
+        }
+ 
+     }
+
+
+     function success_message($data,$location){
+        $_SESSION["success"] = $data;
+        header("location:$location");
+    }
+
+    /* Error message */
+    function error_message($data,$location){
+        $_SESSION["error"] = $data;
+        header("location:$location");
+        
+    }
+
     /* Login */
     if(isset($_POST["login"])){
        $username = htmlspecialchars($_POST["username"]);
@@ -61,5 +102,11 @@
             $_SESSION["error"] = "Account Delete  Fail";
             header("location:account.php");
         }
+    }
+
+
+    /* Create Artists */
+    if(isset($_POST[""])){
+        
     }
 ?>

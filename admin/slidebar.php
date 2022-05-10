@@ -67,11 +67,26 @@
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Account
-                
               </p>
             </a>
           </li>
           <li class="nav-item">
+            <a href="change_password.php" class="nav-link <?php  if(basename($_SERVER['SCRIPT_FILENAME'])=="change_password.php"){ echo "active"; }else{ echo ""; }  ?>">
+              <i class="nav-icon fa fa-exclamation"></i>
+              <p>
+                Change Password
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="artists.php" class="nav-link <?php  if(basename($_SERVER['SCRIPT_FILENAME'])=="artists.php"){ echo "active"; }else{ echo ""; }  ?>">
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+               Artists
+              </p>
+            </a>
+          </li>
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -664,6 +679,15 @@
               <p>Informational</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="logout.php" class="nav-link ">
+              <i class="nav-icon fas fa-logut"></i>
+              <p>
+                Logout
+                
+              </p>
+            </a>
+          </li> -->
           <li class="nav-item">
             <a href="logout.php" class="nav-link ">
               <i class="nav-icon fas fa-logut"></i>

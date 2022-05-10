@@ -27,6 +27,9 @@
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     
+  <!-- CKEditor -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+
 </head>
 
 <?php

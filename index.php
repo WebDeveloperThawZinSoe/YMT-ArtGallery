@@ -29,6 +29,8 @@
                         }
                     }
                 ?>
+
+<a href="artists.php" class="list-group-item list-group-item-action " style="background-color:#eb5844 ;color:white"> View All Artits </a> 
                
               
             </div>

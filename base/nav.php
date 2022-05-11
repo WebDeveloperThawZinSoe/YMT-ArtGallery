@@ -23,6 +23,10 @@
                         }
                     }
                 ?>
+
+                <hr>
+
+                <a class="dropdown-item" href="artists.php" class="list-group-item list-group-item-action">View All Artists</a>
                      
                     </div>
                 </div>

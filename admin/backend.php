@@ -30,12 +30,15 @@
                     return $unique_file_name;
                  }else{
                      error_message("We only accept jpg png and gif",$location);
+                     die();
                  }
              }else{
                  error_message("File is too big",$location);
+                 die();
              }
         }else{
              error_message("File has error" , $location);
+             die();
         }
  
      }

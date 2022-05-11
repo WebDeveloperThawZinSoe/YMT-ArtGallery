@@ -40,6 +40,9 @@
             <section class="content">
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
+                    <?php
+                        include_once "message.php";
+                    ?>
                     <div class="row">
                         <div class="col-md-12 ">
                             <div class="well">
@@ -80,18 +83,18 @@
                     <!-- /.row -->
                     <!-- Main row -->
 
-                    <!-- <table class="table table-bordered ">
+                    <table class="table table-bordered ">
                         <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Name</th>
-                                <th>Create Date</th>
-                                <th>Action</th>
+                                <th>Image</th>
+                                <th>View Detail</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                                $sql = "SELECT * FROM account ORDER BY id DESC";
+                                $sql = "SELECT * FROM artist ORDER BY id DESC";
                                 $result = mysqli_query($database_connection,$sql);
                                 if(mysqli_num_rows($result)>0){
                                   foreach($result as $i=>$r){
@@ -99,10 +102,13 @@
                                       <tr>
                                         <td><?php echo ++$i ?></td>
                                         <td><?php echo $r['name'] ?></td>
-                                        <td><?php echo $r['create_date'] ?></td>
-                                        <td><form action="backend.php" method="post">
+                                        <td>
+                                            <img src="../image/upload/<?php echo $r['image'] ?>"  class="img-fluid" alt="">
+                                        </td>
+                                       
+                                        <td><form action="artist_detail.php" method="post">
                                           <input  type="hidden" name="id" value="<?php echo $r['id'] ?>" >
-                                          <input onclick="return confirm('Are you sure you want to delete this item?');" type="submit" class="btn btn-danger" name="account-delete" value="Delete">
+                                          <input  type="submit" class="btn btn-info" name="artists-detail" value="Detail">
                                         </form></td>
                                       </tr>
                                     <?php
@@ -110,7 +116,7 @@
                                 }
                           ?>
                         </tbody>
-                    </table> -->
+                    </table>
 
                     <!-- /.row (main row) -->
                 </div><!-- /.container-fluid -->

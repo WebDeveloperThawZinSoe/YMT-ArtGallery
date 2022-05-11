@@ -40,6 +40,9 @@
             <section class="content">
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
+                    <?php
+                        include_once "message.php";
+                    ?>
                     <div class="row">
                         <div class="col-md-12 ">
                             <div class="well">

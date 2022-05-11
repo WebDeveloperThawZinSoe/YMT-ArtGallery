@@ -40,5 +40,6 @@
     header("location:login.php");
   }
 
-  include_once "message.php";
+ 
 ?>
+

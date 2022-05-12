@@ -103,6 +103,62 @@
               </p>
             </a>
           </li>
+
+         
+          <li class="nav-header"> SETTINGS </li>
+        
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-circle"></i>
+              <p>
+              Website Setting
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="media.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Media </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="seo.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>SEO </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Level 2
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>Level 3</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>Level 3</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>Level 3</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+          
           <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
@@ -705,7 +761,9 @@
               </p>
             </a>
           </li> -->
-          <li class="nav-item">
+         
+        </ul>
+        <li class="nav-item">
             <a href="logout.php" class="nav-link ">
               <i class="nav-icon fas fa-logut"></i>
               <p>
@@ -714,7 +772,6 @@
               </p>
             </a>
           </li>
-        </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>

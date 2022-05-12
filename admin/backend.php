@@ -174,4 +174,19 @@
             header("location:posts.php");
         }
     }
+
+    /* Create Media */
+    if(isset($_POST["media_create"])){
+       $media = $_POST["media"];
+       $link = $_POST["link"];
+       $sql = "UPDATE media SET link='$link' WHERE name='$media'";
+       $result = mysqli_query($database_connection, $sql);
+       if($result){
+            $_SESSION["success"] = "Link Update  Success";
+            header("location:media.php");
+       }else{
+        $_SESSION["error"] = "Link Update  Fail";
+        header("location:media.php");
+       }
+    }
 ?>

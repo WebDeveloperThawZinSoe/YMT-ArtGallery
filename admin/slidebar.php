@@ -104,6 +104,15 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="contact.php" class="nav-link <?php  if(basename($_SERVER['SCRIPT_FILENAME'])=="contact.php"){ echo "active"; }else{ echo ""; }  ?>">
+              <i class="nav-icon fa fa-phone"></i>
+              <p>
+             Contact
+              </p>
+            </a>
+          </li>
+
          
           <li class="nav-header"> SETTINGS </li>
         

@@ -23,7 +23,7 @@
                     if($result){
                         foreach($result as $r){
                             ?>
-         <div class="col-md-4" style="margin-top:30px">
+         <div class="col-md-4 col-sm-6 col-xs-12" style="margin-top:30px">
             <div class="card">
                 <img class="card-img-top" src="image/upload/<?php echo $r['image'] ?>" style="height:400px" alt="Card image">
                 <div class="card-body">

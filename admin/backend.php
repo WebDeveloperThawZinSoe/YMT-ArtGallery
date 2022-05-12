@@ -124,4 +124,35 @@
             header("location:artists.php");
         }
     }
+
+
+    /* Delete Artists */
+    if(isset($_POST["artists_delete"])){
+       $id = $_POST["id"];
+       $sql = "DELETE FROM artist WHERE id=$id";
+       $result = mysqli_query($database_connection,$sql);
+       $sql = "DELETE FROM posts WHERE artist_id=$id";
+       $result2 = mysqli_query($database_connection,$sql);
+       if($result && $result2){
+           $_SESSION["success"] = "Artist Delete  Success";
+           header("location:artists.php");
+       }else{
+           $_SESSION["error"] = "Artist Delete  Fail";
+           header("location:artists.php");
+       }
+    }
+
+    /* Upgrade Artists */
+    if(isset($_POST["artists_upgrade"])){
+        $id = $_POST["id"];
+        $username = htmlspecialchars($_POST["username"]);
+        $bio = htmlspecialchars($_POST["bio"]);
+        image_filter($_FILES["image"],"artists.php");
+        $sql ="UPDATE artist SET name='$username',image='$unique_file_name',bio='$bio' WHERE id=$id";
+        $result = mysqli_query($database_connection,$sql);
+        if($result){
+            $_SESSION["success"] = "Artist Update  Success";
+            header("location:artists.php");
+        }
+    }
 ?>

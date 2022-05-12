@@ -189,4 +189,20 @@
         header("location:media.php");
        }
     }
+
+    /* Update SEO */
+    if(isset($_POST["seo_update"])){
+      $description = htmlspecialchars($_POST["description"]);
+      $keywords = htmlspecialchars($_POST["keywords"]);
+      $author = htmlspecialchars($_POST["author"]);
+      $sql = "UPDATE seo SET description='$description',keywords='$keywords',author='$author'";
+      $result = mysqli_query($database_connection, $sql);
+      if($result){
+        $_SESSION["success"] = "SEO Update  Success";
+        header("location:seo.php");
+      }else{
+        $_SESSION["error"] = "SEO Update  Fail";
+        header("location:seo.php");
+      }
+    }
 ?>

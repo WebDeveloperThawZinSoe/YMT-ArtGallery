@@ -1,15 +1,30 @@
 <?php
     session_start();
 ?>
+    <?php
+       
+       include_once "database.php";
+   ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <title>YMT-ArtGallery</title>
     <meta charset="utf-8">
-    <meta name="description" content="YMT Art Gallery Store">
-    <meta name="keywords" content="YMT, YMT-Art Gallery, Gallery,Store">
-    <meta name="author" content="Thaw Zin Soe">
+    <?php
+        $sql = "SELECT * FROM seo";
+        $result = mysqli_query($database_connection,$sql);
+        if($result){
+            foreach($result as $r){
+                ?>
+<meta name="description" content="<?php echo $r['description']?>">
+    <meta name="keywords" content="<?php echo $r['keywords']?>">
+    <meta name="author" content="<?php echo $r['author']?>">
+                <?php
+            }
+        }
+    ?>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
@@ -169,10 +184,7 @@
 
 <body>
 
-    <?php
-       
-        include_once "database.php";
-    ?>
+
 
     <!-- 
 

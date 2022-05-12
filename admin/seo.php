@@ -23,12 +23,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Media</h1>
+                            <h1 class="m-0">SEO</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                                <li class="breadcrumb-item active">Media</li>
+                                <li class="breadcrumb-item active">SEO</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -46,26 +46,35 @@
                     <div class="row">
                         <div class="col-md-12 ">
                             <div class="well">
+                                <?php
+                                    $sql = "SELECT * FROM seo ORDER BY id DESC";
+                                    $result = mysqli_query($database_connection,$sql);
+                                    if($result){
+                                        foreach($result as $r){
+                                            ?>
                                 <form action="backend.php" method="post">
                                     <div class="form-group">
-                                        <label for="username">Media Name:</label>
-                                        <select autoclear type="text" class="form-control" name="media"
-                                             required >
-                                             <option value="" disabled selected>--- Select Media ---</option>
-                                            <option value="facebook">Facebook</option>
-                                            <option value="instergram">Instergram</option>
-                                            <option value="phone">Phone</option>
-                                            <option value="email">Email</option>
-                                            </select>
+                                        <label for="username">Description:</label>
+                                        <textarea name="description" class="form-control" id="" cols="30"
+                                            rows="10"><?php echo $r['description']; ?></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="pwd">Link:</label>
-                                        <input autoclear type="text" class="form-control" placeholder="Enter Link"
-                                            name="link" id="pwd">
+                                        <label for="username">Keywords:</label>
+                                        <textarea name="keywords" class="form-control" id="" cols="30"
+                                            rows="10"><?php echo $r['keywords']; ?></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="author">Author:</label>
+                                        <input type="text" class="form-control" name="author" placeholder="Author" value="<?php echo $r['author']; ?>">
                                     </div>
 
-                                    <button type="submit" name="media_create" class="btn btn-primary">                                Submit</button>
+                                    <button type="submit" name="seo_update" class="btn btn-primary"> Update </button>
                                 </form>
+                                <?php
+                                        }
+                                    }
+                                ?>
+
                             </div>
 
                         </div>
@@ -75,30 +84,30 @@
                     <hr>
                     <!-- /.row -->
                     <!-- Main row -->
-                   
+
                     <table class="table table-bordered ">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Name</th>
-                                <th>Link</th>
-                                
+                                <th>Description</th>
+                                <th>Keywords</th>
+                                <th>Author</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                                $sql = "SELECT * FROM media ORDER BY id DESC";
+                                $sql = "SELECT * FROM seo ORDER BY id DESC";
                                 $result = mysqli_query($database_connection,$sql);
                                 if(mysqli_num_rows($result)>0){
                                   foreach($result as $i=>$r){
                                     ?>
-                                      <tr>
-                                        <td><?php echo ++$i ?></td>
-                                        <td><?php echo $r['name'] ?></td>
-                                        <td><?php echo $r['link'] ?></td>
-                                        
-                                      </tr>
-                                    <?php
+                            <tr>
+                                <td><?php echo $r['description'] ?></td>
+                                <td><?php echo $r['keywords'] ?></td>
+                                <td><?php echo $r['author'] ?></td>
+
+                            </tr>
+                            <?php
                                   }
                                 }
                           ?>

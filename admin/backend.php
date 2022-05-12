@@ -155,4 +155,9 @@
             header("location:artists.php");
         }
     }
+
+    /* Create Post */
+    if(isset($_POST["post_create"])){
+        
+    }
 ?>

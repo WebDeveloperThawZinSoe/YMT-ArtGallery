@@ -86,6 +86,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="posts.php" class="nav-link <?php  if(basename($_SERVER['SCRIPT_FILENAME'])=="posts.php"){ echo "active"; }else{ echo ""; }  ?>">
+              <i class="nav-icon fa fa-upload"></i>
+              <p>
+               Posts
+              </p>
+            </a>
+          </li>
           <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>

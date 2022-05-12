@@ -94,6 +94,15 @@
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="see_posts.php" class="nav-link <?php  if(basename($_SERVER['SCRIPT_FILENAME'])=="see_posts.php"){ echo "active"; }else{ echo ""; }  ?>">
+              <i class="nav-icon fa fa-eye"></i>
+              <p>
+               See All Posts
+              </p>
+            </a>
+          </li>
           <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>

@@ -158,6 +158,20 @@
 
     /* Create Post */
     if(isset($_POST["post_create"])){
-        
+        $title = htmlspecialchars($_POST['title']);
+        $artists = htmlspecialchars($_POST['artists']);
+        $price =  htmlspecialchars($_POST['price']);
+        $status = htmlspecialchars($_POST['status']);
+        $description = htmlspecialchars($_POST['description']);
+        image_filter($_FILES["image"],"posts.php");
+        $sql = "INSERT INTO posts(title,artist_id,image, description,price,status) VALUES ('$title','$artists','$unique_file_name','$description','$price','$status')";
+        $result = mysqli_query($database_connection,$sql);
+        if($result){
+            $_SESSION["success"] = "Post Create  Success";
+            header("location:posts.php");
+        }else{
+            $_SESSION["error"] = "Post Create  Fail";
+            header("location:posts.php");
+        }
     }
 ?>

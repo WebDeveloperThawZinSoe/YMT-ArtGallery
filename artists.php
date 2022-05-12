@@ -29,7 +29,10 @@
                 <div class="card-body">
                     <h4 class="card-title"><?php echo $r['name'] ?></h4>
                   
-                    <a href="#" class="btn btn-primary btn-block">View Detail</a>
+                    <form action="artist-details.php" method="post" >
+                                    <input type="hidden" name="id" value="<?php echo $r['id'] ?>" >
+                                    <input  class="btn btn-primary btn-block" type="submit" name="detail" value="View Detail">
+                                </form>
                 </div>
             </div>
         </div>

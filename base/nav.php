@@ -18,7 +18,10 @@
                     if($result){
                         foreach($result as $r){
                             ?>
-                                <a class="dropdown-item" href="artist-details.php?id='<?php echo $r['id'] ?>'" class="list-group-item list-group-item-action"><?php echo $r['name']; ?></a>
+                                <form action="artist-details.php" method="post" >
+                                    <input type="hidden" name="id" value="<?php echo $r['id'] ?>" >
+                                    <input  class="dropdown-item" type="submit" name="detail" value="<?php echo $r['name'] ?>">
+                                </form>
                             <?php
                         }
                     }
@@ -30,12 +33,12 @@
                      
                     </div>
                 </div>
-                <a href="#" class="nav-item nav-link">Painting</a>
+                <a href="painting.php" class="nav-item nav-link">Painting</a>
                 <a href="contact.php" class="nav-item nav-link">Contact</a>
             </div>
             <div class="navbar-nav ml-auto">
                 <div class="navbar-form-wrapper">
-                    <form class="navbar-form form-inline">
+                    <!-- <form class="navbar-form form-inline">
                         <div class="input-group search-box">
                             <input type="text" id="search" class="form-control" placeholder="Search Here...">
                             <div class="input-group-append">
@@ -44,7 +47,7 @@
                                 </span>
                             </div>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
                 <a href="https://www.facebook.com/yemyat.amz
 " target="_blank" class="nav-item nav-link"> <i class="fa fa-facebook"></i></a>

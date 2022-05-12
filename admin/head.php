@@ -30,7 +30,8 @@
   <!-- CKEditor -->
   <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 
-</head>
+
+  </head>
 
 <?php
   session_start();

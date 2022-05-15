@@ -21,6 +21,13 @@
                     ?>
 
 <div class="container">
+<nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                <li class="breadcrumb-item"><a href="artists.php">Artists</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><?php echo $r['name'] ?></li>
+            </ol>
+        </nav>
     <div class="row">
         
         <div class="col-md-4 col-sm-12">
@@ -31,13 +38,7 @@
             <p><?php echo $r['bio'] ?></p> <br>
         </div>
         <div class="col-md-8 col-sm-12">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                <li class="breadcrumb-item"><a href="artists.php">Artists</a></li>
-                <li class="breadcrumb-item active" aria-current="page"><?php echo $r['name'] ?></li>
-            </ol>
-        </nav>
+        
             <?php
                     $sql = "SELECT * FROM posts WHERE artist_id='$id'";
                     $result = mysqli_query($database_connection,$sql);

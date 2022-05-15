@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-        <a class="navbar-brand" href="#">YMT<b>ArtGallery</b></a>
+        <a class="navbar-brand" href="#">
+           <img style="width:100px;height:100px" src="image/logo.jpg" class="img-responsive" alt=""> YMT<b>ArtGallery</b></a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>

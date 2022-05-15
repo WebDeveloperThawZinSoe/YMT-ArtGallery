@@ -205,4 +205,20 @@
         header("location:seo.php");
       }
     }
+
+    /* Contact Page Setting */
+    if(isset($_POST["contact_page_update"])){
+       $main = htmlspecialchars($_POST["main"]);
+       $secondary = htmlspecialchars($_POST["secondary"]);
+       $content_text = htmlspecialchars($_POST["content-text"]);
+       $map = htmlspecialchars($_POST["map"]);
+       $address = ($_POST["address"]);
+       image_filter($_FILES["image"],"contact-page.php");
+       $sql = "UPDATE contact_page SET main_text='$main',secondary_text='$secondary',image='$unique_file_name',content_text='$content_text',map='$map',address='$address' ";
+       $result = mysqli_query($database_connection,$sql);
+       if($result){
+        $_SESSION["success"] = "Page Setting Update  Success";
+        header("location:contact-page.php");
+       }
+    }
 ?>

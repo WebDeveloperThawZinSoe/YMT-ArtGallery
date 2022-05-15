@@ -20,9 +20,15 @@ swal("Mail Send Success . Admin with will reply within 24hours.", "", "success")
        }
     }
 ?>
-
+<?php
+    $sql  = "SELECT * FROM contact_page ";
+    $result = mysqli_query($database_connection,$sql);
+    if($result){
+        foreach($result as $r){
+            $image = $r['image'];
+            ?>
 <!-- Section One -->
-<div style="background-image: url('image/img-1.jpg');background-position: center;background-attachment: fixed;background-size: cover;height:340px"
+<div style="background-image: url('image/cover1.jpg');background-position: center;background-attachment: fixed;background-size: cover;height:500px"
     class="jumbotron text-left " style="background-color: white;">
     <div class="container">
         <h1 style="text-transform: uppercase;"> <span style="color:white;">Welcome From YMT</span> <span
@@ -30,7 +36,6 @@ swal("Mail Send Success . Admin with will reply within 24hours.", "", "success")
         <p style="color:white;"> <b> Resize this responsive page to see the effect!</b> </p>
     </div>
 </div>
-
 
 <div class="container">
     <h3 class="text-center"
@@ -71,21 +76,13 @@ swal("Mail Send Success . Admin with will reply within 24hours.", "", "success")
         <div class="col-md-6">
 
             <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, atque, sequi iusto voluptatum itaque
-                porro
-                accusantium error ab voluptatem sunt, laboriosam nisi animi officia magnam quasi totam? Distinctio, odio
-                laborum?
+               <?php echo $r['content_text'] ?>
             </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, atque, sequi iusto voluptatum itaque
-                porro
-                accusantium error ab voluptatem sunt, laboriosam nisi animi officia magnam quasi totam? Distinctio, odio
-                laborum?
-            </p>
+           
             <p>
                 Phone : 09791946212 <br>
                 Email : ymtartgallery@gmail.com <br>
-                Address : No 517 / Shwe Sin (7) Street / 44 Ward / NorthDagon <br>
+                Address : <?php echo $r['map'] ?><br>
             </p>
 
             <p>
@@ -93,19 +90,20 @@ swal("Mail Send Success . Admin with will reply within 24hours.", "", "success")
 
             <ul class="nav">
                 <li class="nav-item">
-                <a href="https://www.facebook.com/yemyat.amz
+                    <a href="https://www.facebook.com/yemyat.amz
 " target="_blank" class="nav-item nav-link"> <i class="fa fa-facebook"></i></a>
                 </li>
                 <li class="nav-item">
-                <a href="https://www.instagram.com/p/CdQsoM5vCrb/?igshid=YmMyMTA2M2Y=" target="_blank"
-                    class="nav-item nav-link"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/p/CdQsoM5vCrb/?igshid=YmMyMTA2M2Y=" target="_blank"
+                        class="nav-item nav-link"><i class="fa fa-instagram"></i></a>
                 </li>
                 <li class="nav-item">
-                <a href="mailto:ymtartgallery@gmail.com" target="_blank" class="nav-item nav-link"><i
-                        class="fa fa-envelope"></i></a>
+                    <a href="mailto:ymtartgallery@gmail.com" target="_blank" class="nav-item nav-link"><i
+                            class="fa fa-envelope"></i></a>
                 </li>
                 <li class="nav-item">
-                <a href="tel:+959403077739" target="_blank" class="nav-item nav-link"><i class="fa fa-phone"></i></a>
+                    <a href="tel:+959403077739" target="_blank" class="nav-item nav-link"><i
+                            class="fa fa-phone"></i></a>
                 </li>
             </ul>
 
@@ -113,13 +111,17 @@ swal("Mail Send Success . Admin with will reply within 24hours.", "", "success")
 
         </div>
         <div class="col-md-12">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3817.7817473397863!2d96.20156361389438!3d16.886687688380505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c193fbf369bd69%3A0x14d8bc571b3c87b4!2sApex%20Myanmar%20Web%20Service!5e0!3m2!1sen!2smm!4v1652070374583!5m2!1sen!2smm"
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <?php
+            echo $r['address'];
+          ?>
         </div>
     </div>
 </div>
+<?php
+        }
+    }
+?>
+
 <!-- <script>
 var field_name = document.getElementById("field_name");
 var field_phone = document.getElementById("field_phone");

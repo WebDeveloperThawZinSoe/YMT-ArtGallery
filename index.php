@@ -4,7 +4,7 @@
 ?>
 
 <!-- Section One -->
-<div style="background-image: url('image/img-1.jpg');background-position: center;background-attachment: fixed;background-size: cover;height:340px"
+<div style="background-image: url('image/cover1.jpg');background-position: center;background-attachment: fixed;background-size: cover;height:500px"
     class="jumbotron text-left " style="background-color: white;">
     <div class="container">
         <h1 style="text-transform: uppercase;"> <span style="color:white;">Welcome From YMT</span> <span

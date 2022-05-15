@@ -11,6 +11,7 @@
 <head>
     <title>YMT-ArtGallery</title>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="image/logo.jpg" />
     <?php
         $sql = "SELECT * FROM seo";
         $result = mysqli_query($database_connection,$sql);

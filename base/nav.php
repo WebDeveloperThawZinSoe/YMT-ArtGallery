@@ -35,6 +35,7 @@
                     </div>
                 </div>
                 <a href="painting.php" class="nav-item nav-link">Painting</a>
+             
                 <a href="contact.php" class="nav-item nav-link">Contact</a>
             </div>
             <div class="navbar-nav ml-auto">

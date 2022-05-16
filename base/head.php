@@ -1,7 +1,7 @@
 <?php
     session_start();
 ?>
-    <?php
+<?php
        
        include_once "database.php";
    ?>
@@ -18,14 +18,14 @@
         if($result){
             foreach($result as $r){
                 ?>
-<meta name="description" content="<?php echo $r['description']?>">
+    <meta name="description" content="<?php echo $r['description']?>">
     <meta name="keywords" content="<?php echo $r['keywords']?>">
     <meta name="author" content="<?php echo $r['author']?>">
-                <?php
+    <?php
             }
         }
     ?>
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
@@ -37,11 +37,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    
+
     <style>
+    html{
+        scroll-behavior: smooth;
+    }
     body {
         /* background: #eeeeee; */
         font-family: 'Varela Round', sans-serif;
+        
     }
 
     .form-inline {
@@ -53,6 +57,13 @@
     }
 
     .navbar {
+        overflow: hidden;
+        background-color: #333;
+        /* Set the navbar to fixed position */
+        top: 0;
+        /* Position the navbar at the top of the page */
+        width: 100%;
+        /* Full width */
         background: #fff;
         padding-left: 16px;
         padding-right: 16px;
@@ -178,6 +189,40 @@
         .input-group {
             width: 100%;
         }
+    }
+
+    #myBtn {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Fixed/sticky position */
+        bottom: 20px;
+        /* Place the button at the bottom of the page */
+        right: 30px;
+        /* Place the button 30px from the right */
+        z-index: 99;
+        /* Make sure it does not overlap */
+        border: none;
+        /* Remove borders */
+        outline: none;
+        /* Remove outline */
+        background-color: red;
+        /* Set a background color */
+        color: white;
+        /* Text color */
+        cursor: pointer;
+        /* Add a mouse pointer on hover */
+        padding: 15px;
+        /* Some padding */
+        border-radius: 10px;
+        /* Rounded corners */
+        font-size: 18px;
+        /* Increase font size */
+    }
+
+    #myBtn:hover {
+        background-color: #555;
+        /* Add a dark-grey background on hover */
     }
     </style>
 

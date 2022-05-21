@@ -41,11 +41,12 @@
     <style>
     html{
         scroll-behavior: smooth;
+        
     }
     body {
         /* background: #eeeeee; */
         font-family: 'Varela Round', sans-serif;
-        
+       
     }
 
     .form-inline {
@@ -56,21 +57,7 @@
         padding: 0 !important;
     }
 
-    .navbar {
-        overflow: hidden;
-        background-color: #333;
-        /* Set the navbar to fixed position */
-        top: 0;
-        /* Position the navbar at the top of the page */
-        width: 100%;
-        /* Full width */
-        background: #fff;
-        padding-left: 16px;
-        padding-right: 16px;
-        border-bottom: 1px solid #d6d6d6;
-        box-shadow: 0 0 4px rgba(0, 0, 0, .1);
-    }
-
+   
     .nav-link {
         margin: 0 5px;
     }
@@ -177,6 +164,7 @@
             width: 250px;
             margin-right: 30px;
         }
+
     }
 
     @media (max-width: 991px) {
@@ -188,6 +176,13 @@
 
         .input-group {
             width: 100%;
+        }
+        body{
+            background-color: gray;
+            color:white;
+        }
+        .at-sm{
+            color:white !important;
         }
     }
 

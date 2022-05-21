@@ -138,7 +138,7 @@ swal("Mail Send Success . Admin with will reply within 24hours.", "", "success")
                 </div>
                 <div class="row photos">
                     <?php
-                    $sql = "SELECT * FROM posts ORDER BY id DESC LIMIT 9";
+                    $sql = "SELECT * FROM posts ORDER BY id DESC ";
                     $result = mysqli_query($database_connection,$sql);
                     if($result){
                         foreach($result as $r){
@@ -207,8 +207,7 @@ swal("Mail Send Success . Admin with will reply within 24hours.", "", "success")
                 </div>
             </div>
             <br>
-            <center>  <a target="_blank" href="all_painting.php" class="btn  text-center  " style="background-color: #eb5844;color:white"  data-placement>View All Arts</a></center>
-          
+
         </div>
 
     </div>

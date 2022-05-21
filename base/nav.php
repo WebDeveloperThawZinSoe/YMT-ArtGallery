@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
         <a class="navbar-brand" href="#">
-           <img style="width:100px;height:100px" src="image/logo.jpg" class="img-responsive" alt=""> YMT<b>ArtGallery</b></a>
+           <img class="rounded-circle" style="width:100px;height:100px" src="image/logo.jpg" class="img-responsive" alt=""> YMT<b class="at-sm">ArtGallery</b></a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -9,7 +9,7 @@
         <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
             <div class="navbar-nav">
                 <a href="index.php" class="nav-item nav-link">Home</a>
-                <a href="#" class="nav-item nav-link">Myint Naing</a>
+                <a href="painting.php" class="nav-item nav-link">Myint Naing</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-item nav-link dropdown-toggle" data-toggle="dropdown">Artits</a>
                     <div class="dropdown-menu">

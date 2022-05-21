@@ -180,7 +180,7 @@
     
 </div>
 <br>
-<div class="container">
+<!-- <div class="container">
     <h2 style="text-decoration: underline;">  Pictures </h2>
     <div class="container">
 <h1>Photo/Gallery</h1>
@@ -243,7 +243,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 </div>
 <script>
     $('.thumbnail').click(function(){

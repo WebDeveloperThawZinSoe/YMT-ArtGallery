@@ -80,14 +80,18 @@
        $password = pwd_has($password);
        $sql = "SELECT id FROM account WHERE name = '$username' ";
        $result = mysqli_query($database_connection, $sql);
+       $now = date('Y-m-d H:i:s');
        if(mysqli_num_rows($result) > 0){
            $_SESSION["error"] = "User Already Exist";
            header("location:account.php");
        }else{ 
-           $sql = "INSERT INTO account(name,password) VALUES ('$username','$password')";
+           $sql = "INSERT INTO account(name,password,create_date) VALUES ('$username','$password','$now')";
            $result = mysqli_query($database_connection, $sql);
            if($result){
             $_SESSION["success"] = "Account Create  Success";
+            header("location:account.php");
+           }else{
+            $_SESSION["error"] = "Account Create  Fail";
             header("location:account.php");
            }
        }

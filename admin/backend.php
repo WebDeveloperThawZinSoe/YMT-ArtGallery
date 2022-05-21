@@ -118,7 +118,8 @@
        $bio = htmlspecialchars($_POST["bio"]);
        image_filter($_FILES["image"],"artists.php");
         # $unique_file_name;
-        $sql = "INSERT INTO artist(name,image,bio) VALUES ('$username','$unique_file_name','$bio')";
+        $now = date('Y-m-d H:i:s');
+        $sql = "INSERT INTO artist(name,image,bio,create_date) VALUES ('$username','$unique_file_name','$bio','$now')";
         $result = mysqli_query($database_connection,$sql);
         if($result){
             $_SESSION["success"] = "Artists Create  Success";
@@ -168,7 +169,8 @@
         $status = htmlspecialchars($_POST['status']);
         $description = htmlspecialchars($_POST['description']);
         image_filter($_FILES["image"],"posts.php");
-        $sql = "INSERT INTO posts(title,artist_id,image, description,price,status) VALUES ('$title','$artists','$unique_file_name','$description','$price','$status')";
+        $now = date('Y-m-d H:i:s');
+        $sql = "INSERT INTO posts(title,artist_id,image, description,price,status,create_date) VALUES ('$title','$artists','$unique_file_name','$description','$price','$status','$now')";
         $result = mysqli_query($database_connection,$sql);
         if($result){
             $_SESSION["success"] = "Post Create  Success";
@@ -224,5 +226,19 @@
         $_SESSION["success"] = "Page Setting Update  Success";
         header("location:contact-page.php");
        }
+    }
+
+    /* change-logo */
+    if(isset($_POST["change-logo"])){
+        image_filter( $_FILES["logo"],"index.php");
+        $sql = "UPDATE logo SET name='$unique_file_name' ";
+        $result = mysqli_query($database_connection,$sql);
+        if($result){
+            $_SESSION["success"] = "Logo Update  Success";
+            header("location:overall.php");
+          }else{
+            $_SESSION["error"] = "Logo Update  Fail";
+            header("location:overall.php");
+          }
     }
 ?>

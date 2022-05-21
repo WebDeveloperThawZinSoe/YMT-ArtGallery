@@ -8,7 +8,8 @@
        $name = htmlspecialchars($_POST["name"]);
        $phone =  htmlspecialchars($_POST["phone"]);
        $address = htmlspecialchars($_POST["address"]);
-       $sql = "INSERT INTO contact (title,phone,message) VALUES ('$name','$phone','$address')";
+       $now = date('Y-m-d H:i:s');
+       $sql = "INSERT INTO contact (title,phone,message,create_date) VALUES ('$name','$phone','$address','$now')";
        $result = mysqli_query($database_connection,$sql);
        if($result){
           ?>

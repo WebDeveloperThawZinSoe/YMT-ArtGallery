@@ -1,7 +1,20 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
         <a class="navbar-brand" href="#">
-           <img class="rounded-circle" style="width:100px;height:100px" src="image/logo.jpg" class="img-responsive" alt=""> YMT<b class="at-sm">ArtGallery</b></a>
+        <?php 
+                                $sql = "SELECT name FROM logo "; 
+                                $result = mysqli_query($database_connection,$sql);
+                                if($result){
+                                    foreach($result as $r){
+                                        ?>
+                                
+                                <img class="rounded-circle" style="width:100px;height:100px" src="image/upload/<?php echo $r['name'] ?>" class="img-responsive" alt=""> YMT<b class="at-sm">ArtGallery</b></a> 
+                                        <?php
+                                    }
+                                }
+                                ?>
+       
+           <!-- <img class="rounded-circle" style="width:100px;height:100px" src="image/logo.jpg" class="img-responsive" alt=""> YMT<b class="at-sm">ArtGallery</b></a> -->
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>

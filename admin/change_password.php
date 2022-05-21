@@ -40,11 +40,26 @@
             <section class="content">
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
-                    <form action="backend.php" method="post" enctype="multipart/form"></form>
+                    <form action="backend.php" method="post" enctype="multipart/form">
+                        <div class="form-group">
+                            <label for="username">Current Password:</label>
+                            <input autoclear type="text" class="form-control" name="current_pass"
+                                placeholder="Enter Current Password" required id="username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username">New Password:</label>
+                            <input autoclear type="text" class="form-control" name="new_pass"
+                                placeholder="Enter New Password" required id="username">
+                        </div>
+
+                        <input type="submit" name="Change Password" class="btn btn-primary" value="Change Password">
+                       
+                    </form>
                     <!-- /.row -->
                     <!-- Main row -->
 
-              
+
 
                     <!-- /.row (main row) -->
                 </div><!-- /.container-fluid -->

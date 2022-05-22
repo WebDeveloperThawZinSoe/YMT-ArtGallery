@@ -97,6 +97,10 @@
                     <!-- /.row (main row) -->
                 </div><!-- /.container-fluid -->
             </section>
+            <div class="container">
+                <h3>Background and Color</h3>
+
+            </div>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2022 at 05:07 PM
+-- Generation Time: May 22, 2022 at 09:45 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -32,7 +32,7 @@ CREATE TABLE `account` (
   `name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `status` int(2) NOT NULL,
-  `create_date` date DEFAULT NULL
+  `create_date` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -40,9 +40,8 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`id`, `name`, `password`, `status`, `create_date`) VALUES
-(11, 'trs', 'ThtIJz9FnwURk', 0, '2022-05-10'),
-(12, 'admin', 'ThEXec7XB0/gs', 0, '2022-05-10'),
-(16, 'tzs', 'ThtIJz9FnwURk', 0, '2022-05-11');
+(18, 'admin', 'ThdWpyewrPpVI', 0, '2022-05-21 20:22:52'),
+(19, 'thaw zin soe', 'ThtIJz9FnwURk', 0, '2022-05-22 07:53:42');
 
 -- --------------------------------------------------------
 
@@ -55,7 +54,7 @@ CREATE TABLE `artist` (
   `name` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   `bio` text DEFAULT NULL,
-  `create_date` date DEFAULT NULL
+  `create_date` varchar(225) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -74,18 +73,6 @@ INSERT INTO `artist` (`id`, `name`, `image`, `bio`, `create_date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
---
-
-CREATE TABLE `category` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `create_date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `contact`
 --
 
@@ -94,7 +81,7 @@ CREATE TABLE `contact` (
   `title` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `message` text NOT NULL,
-  `create_date` date DEFAULT NULL
+  `create_date` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -106,7 +93,8 @@ INSERT INTO `contact` (`id`, `title`, `phone`, `message`, `create_date`) VALUES
 (8, 'Thiri San', '09251016448', 'North Dangon', '2022-05-09'),
 (9, 'Tester', '199', 'This is testing\r\n', '2022-05-09'),
 (10, 'Baby Thaw', '111', 'Testing', '2022-05-09'),
-(11, '&lt;script&gt; alert(1) &lt;/script&gt;', '1111', '&lt;script&gt; alert(1) &lt;/script&gt;', '2022-05-12');
+(11, '&lt;script&gt; alert(1) &lt;/script&gt;', '1111', '&lt;script&gt; alert(1) &lt;/script&gt;', '2022-05-12'),
+(12, 'Testing ', '09403077739', 'No 9/689\r\nShwepadar Street , East Dagon', '2022-05-21 20:31:54');
 
 -- --------------------------------------------------------
 
@@ -133,25 +121,80 @@ INSERT INTO `contact_page` (`main_text`, `secondary_text`, `image`, `content_tex
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `dasktop_style`
+--
+
+CREATE TABLE `dasktop_style` (
+  `background_color` varchar(255) NOT NULL,
+  `color` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `logo`
+--
+
+CREATE TABLE `logo` (
+  `name` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `logo`
+--
+
+INSERT INTO `logo` (`name`) VALUES
+('99_logo.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `logo_style`
+--
+
+CREATE TABLE `logo_style` (
+  `style` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `logo_style`
+--
+
+INSERT INTO `logo_style` (`style`) VALUES
+('rounded-circle');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `media`
 --
 
 CREATE TABLE `media` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `link` text NOT NULL,
-  `create_date` date NOT NULL DEFAULT current_timestamp()
+  `link` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `media`
 --
 
-INSERT INTO `media` (`id`, `name`, `link`, `create_date`) VALUES
-(1, 'facebook', 'https://www.facebook.com/yemyat.amz', '2022-05-12'),
-(2, 'instergram', 'https://www.instagram.com/p/CdQsoM5vCrb/?igshid=YmMyMTA2M2Y=', '2022-05-12'),
-(3, 'phone', '09791946212', '2022-05-12'),
-(4, 'email', 'ymtartgallery@gmail.com', '2022-05-12');
+INSERT INTO `media` (`id`, `name`, `link`) VALUES
+(1, 'facebook', 'https://www.facebook.com/yemyat.amz'),
+(2, 'instergram', 'https://www.instagram.com/p/CdQsoM5vCrb/?igshid=YmMyMTA2M2Y='),
+(3, 'phone', '09791946212'),
+(4, 'email', 'ymtartgallery@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mobile_style`
+--
+
+CREATE TABLE `mobile_style` (
+  `background_color` varchar(255) NOT NULL,
+  `color` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -168,7 +211,7 @@ CREATE TABLE `posts` (
   `description` text NOT NULL,
   `price` varchar(255) NOT NULL,
   `status` int(2) NOT NULL,
-  `create_date` date DEFAULT NULL
+  `create_date` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -226,12 +269,6 @@ ALTER TABLE `artist`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `category`
---
-ALTER TABLE `category`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `contact`
 --
 ALTER TABLE `contact`
@@ -257,25 +294,19 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `artist`
 --
 ALTER TABLE `artist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT for table `category`
---
-ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `media`

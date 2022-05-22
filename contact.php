@@ -77,19 +77,61 @@ swal("Mail Send Success . Admin with will reply within 24hours.", "", "success")
         <div class="col-md-6">
 
             <p>
-               <?php echo $r['content_text'] ?>
+                <?php echo $r['content_text'] ?>
             </p>
-           
+
             <p>
+                <?php
+                ?>
                 Phone : 09791946212 <br>
                 Email : ymtartgallery@gmail.com <br>
                 Address : <?php echo $r['map'] ?><br>
             </p>
 
             <p>
+           
+                <?php
+    $sql = "SELECT * FROM media";
+    $result = mysqli_query($database_connection,$sql);
+    if($result){
+        foreach($result as $rr){
+            $icon = "";
+            if($rr['name'] == "facebook"){
+                ?>
+                 <ul class="nav">
+                <a href="<?php echo $rr['link'] ?>" target="_blank" class="nav-item nav-link"><i
+                        class="fa fa-facebook"></i></a>
+                <?php
+            }
+            if($rr['name'] == "instergram"){
+                ?>
+                <a href="<?php echo $rr['link'] ?>" target="_blank" class="nav-item nav-link"><i
+                        class="fa fa-instagram"></i></a>
+                <?php
+            }
+            if($rr['name'] == "phone"){
+                ?>
+                <a href="tel:+95<?php echo $rr['link'] ?>" target="_blank" class="nav-item nav-link"><i
+                        class="fa fa-phone"></i></a>
+                <?php
+            }
+            if($rr['name'] == "email"){
+                ?>
+                <a href="mailto:<?php echo $rr['link'] ?>" target="_blank" class="nav-item nav-link"><i
+                        class="fa fa-envelope"></i></a>
+                <?php
+            }
+            ?>
 
 
-            <ul class="nav">
+
+
+                <?php
+        }
+    }
+?>
+            </ul>
+            <!-- <ul class="nav">
                 <li class="nav-item">
                     <a href="https://www.facebook.com/yemyat.amz
 " target="_blank" class="nav-item nav-link"> <i class="fa fa-facebook"></i></a>
@@ -103,16 +145,16 @@ swal("Mail Send Success . Admin with will reply within 24hours.", "", "success")
                             class="fa fa-envelope"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a href="tel:+959403077739" target="_blank" class="nav-item nav-link"><i
+                    <a href="tel:+09791946212" target="_blank" class="nav-item nav-link"><i
                             class="fa fa-phone"></i></a>
                 </li>
-            </ul>
+            </ul> -->
 
             </p>
 
         </div>
         <div class="col-md-12">
-          <?php
+            <?php
             echo $r['address'];
           ?>
         </div>

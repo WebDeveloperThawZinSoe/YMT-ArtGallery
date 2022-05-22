@@ -64,14 +64,45 @@
                         </div>
                     </form> -->
                 </div>
-
-                <a href="https://www.facebook.com/yemyat.amz
-" target="_blank" class="nav-item nav-link"> <i class="fa fa-facebook"></i></a>
-                <a href="https://www.instagram.com/p/CdQsoM5vCrb/?igshid=YmMyMTA2M2Y=" target="_blank"
+<?php
+    $sql = "SELECT * FROM media";
+    $result = mysqli_query($database_connection,$sql);
+    if($result){
+        foreach($result as $r){
+            $icon = "";
+            if($r['name'] == "facebook"){
+                ?>
+ <a href="<?php echo $r['link'] ?>" target="_blank"
+                    class="nav-item nav-link"><i class="fa fa-facebook"></i></a>
+                <?php
+            }
+            if($r['name'] == "instergram"){
+                ?>
+<a href="<?php echo $r['link'] ?>" target="_blank"
                     class="nav-item nav-link"><i class="fa fa-instagram"></i></a>
-                <a href="mailto:ymtartgallery@gmail.com" target="_blank" class="nav-item nav-link"><i
+                <?php
+            }
+            if($r['name'] == "phone"){
+                ?>
+ <a href="tel:+95<?php echo $r['link'] ?>" target="_blank" class="nav-item nav-link"><i class="fa fa-phone"></i></a>
+                <?php
+            }
+            if($r['name'] == "email"){
+                ?>
+  <a href="mailto:<?php echo $r['link'] ?>" target="_blank" class="nav-item nav-link"><i
                         class="fa fa-envelope"></i></a>
-                <a href="tel:+959403077739" target="_blank" class="nav-item nav-link"><i class="fa fa-phone"></i></a>
+                <?php
+            }
+            ?>
+              
+                
+              
+               
+            <?php
+        }
+    }
+?>
+
 
             </div>
         </div>

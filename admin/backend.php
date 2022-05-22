@@ -241,4 +241,27 @@
             header("location:overall.php");
           }
     }
+
+    /* Change password */
+    if(isset($_POST["ChangePassword"])){
+        $name = $_POST["name"];
+        $current_pass = htmlspecialchars($_POST["current_pass"]);
+        $current_pass = pwd_has($current_pass);
+        $new_pass = htmlspecialchars($_POST["new_pass"]);
+        $new_pass = pwd_has($new_pass);
+        $sql = "SELECT * FROM account WHERE  name='$name' AND password='$current_pass'";
+        $result = mysqli_query($database_connection, $sql);
+        if(mysqli_num_rows($result) > 0){
+           $sql = "UPDATE account SET password='$new_pass' WHERE  name='$name' AND password='$current_pass'";
+           $result = mysqli_query($database_connection, $sql);
+           if($result){
+            $_SESSION["success"] = " Password Change Success";
+            header("location:change_password.php");
+          }
+        }else{ 
+          
+            $_SESSION["error"] = "Wrong Password";
+            header("location:change_password.php");
+        }
+    }
 ?>

@@ -22,6 +22,9 @@
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
+                    <?php
+                        include_once "message.php";
+                    ?>
                         <div class="col-sm-6">
                             <h1 class="m-0">Change Password</h1>
                         </div><!-- /.col -->
@@ -41,6 +44,7 @@
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
                     <form action="backend.php" method="post" enctype="multipart/form">
+                        <input type="hidden" name="name" value="<?php echo $_SESSION['user'] ?>">
                         <div class="form-group">
                             <label for="username">Current Password:</label>
                             <input autoclear type="text" class="form-control" name="current_pass"
@@ -53,7 +57,7 @@
                                 placeholder="Enter New Password" required id="username">
                         </div>
 
-                        <input type="submit" name="Change Password" class="btn btn-primary" value="Change Password">
+                        <input type="submit" name="ChangePassword" class="btn btn-primary" value="Change Password">
                        
                     </form>
                     <!-- /.row -->

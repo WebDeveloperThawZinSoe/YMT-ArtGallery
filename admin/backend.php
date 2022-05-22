@@ -264,4 +264,18 @@
             header("location:change_password.php");
         }
     }
+
+    /* change-style-logo */
+    if(isset($_POST["change-style-logo"])){
+       $style = $_POST["logo-style"];
+       $sql = "UPDATE logo_style SET style='$style' ";
+       $result = mysqli_query($database_connection, $sql);
+       if($result){
+        $_SESSION["success"] = " Logo Style Change Success";
+        header("location:overall.php");
+       }else{
+        $_SESSION["error"] = " Logo Style Change Fail";
+        header("location:overall.php");
+       }
+    }
 ?>

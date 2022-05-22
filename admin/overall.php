@@ -46,25 +46,43 @@
                     <div class="row">
                         <div class="col-md-12 ">
                             <div class="well">
+                                <h3>Logo</h3>
                                 <?php 
                                 $sql = "SELECT name FROM logo "; 
                                 $result = mysqli_query($database_connection,$sql);
                                 if($result){
                                     foreach($result as $r){
                                         ?>
-                                <img style="width:300px;height:300px"  src="../image/upload/<?php echo $r['name'] ?>" alt="Logo Image">
-                                
-                                        <?php
+                                <img style="width:300px;height:300px" src="../image/upload/<?php echo $r['name'] ?>"
+                                    alt="Logo Image">
+
+                                <?php
                                     }
                                 }
                                 ?>
                                 <br>
-                                <form action="backend.php" 
-                              method="post" enctype="multipart/form-data">
+                                <form action="backend.php" method="post" enctype="multipart/form-data">
                                     <input type="file" name="logo">
                                     <input type="submit" name="change-logo" class="btn btn-warning" value="Change Logo">
                                 </form>
                             </div>
+                            <br> <br>
+                            <form action="backend.php" method="post" enctype="multipart/form-data">
+                                <select class="form-control" name="logo-style" id="">
+                                    <option value="" selected disabled hidden>-- Select Style--</option>
+                                    <option value="rounded">Rounded</option>
+
+                                    <option value="rounded-circle">Circle</option>
+
+                                    <option value="img-thumbnail">Thumbnail</option>
+                                    <option value="invisible">Hide</option>
+                                </select>
+
+                                <br>
+                                <input type="submit" name="change-style-logo" class="btn btn-warning"
+                                    value="Change Style Logo">
+                            </form>
+
 
                         </div>
 
@@ -74,7 +92,7 @@
                     <!-- /.row -->
                     <!-- Main row -->
 
-               
+
 
                     <!-- /.row (main row) -->
                 </div><!-- /.container-fluid -->

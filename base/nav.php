@@ -6,9 +6,22 @@
                                 $result = mysqli_query($database_connection,$sql);
                                 if($result){
                                     foreach($result as $r){
+                                        $sql2 = "SELECT * FROM logo_style";
+                                        $result2 = mysqli_query($database_connection,$sql2);
+                                        if($result2){
+                                            foreach($result2 as $r2){
+                                                ?>
+ <img  style="width:100px;height:100px" src="image/upload/<?php echo $r['name'] ?>" class="<?php echo $r2['style'] ?> " alt=""> YMT<b class="at-sm">ArtGallery</b></a> 
+          
+                                                <?php
+                                            }
+                                            ?>
+                                  
+                                            <?php
+                                        }
                                         ?>
                                 
-                                <img class="rounded-circle" style="width:100px;height:100px" src="image/upload/<?php echo $r['name'] ?>" class="img-responsive" alt=""> YMT<b class="at-sm">ArtGallery</b></a> 
+                               
                                         <?php
                                     }
                                 }
@@ -53,16 +66,7 @@
             </div>
             <div class="navbar-nav ml-auto">
                 <div class="navbar-form-wrapper">
-                    <!-- <form class="navbar-form form-inline">
-                        <div class="input-group search-box">
-                            <input type="text" id="search" class="form-control" placeholder="Search Here...">
-                            <div class="input-group-append">
-                                <span class="input-group-text">
-                                    <i class="material-icons">&#xE8B6;</i>
-                                </span>
-                            </div>
-                        </div>
-                    </form> -->
+                   
                 </div>
 <?php
     $sql = "SELECT * FROM media";

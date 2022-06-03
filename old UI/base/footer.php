@@ -23,6 +23,8 @@ function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+
 </script>
 <hr style="margin-top:20px">
 <div class="footer " style="margin-top: 20px;margin-bottom: 20px;">

@@ -39,6 +39,9 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <style>
+    *{
+        font-family: Verdana, Geneva, Tahoma, sans-serif
+    }
     html{
         scroll-behavior: smooth;
         
@@ -178,8 +181,8 @@
             width: 100%;
         }
         body{
-            background-color: gray;
-            color:white;
+            /* background-color: black;
+            color:white; */
         }
         .at-sm{
             color:white !important;
@@ -219,6 +222,8 @@
         background-color: #555;
         /* Add a dark-grey background on hover */
     }
+
+    
     </style>
 
 </head>

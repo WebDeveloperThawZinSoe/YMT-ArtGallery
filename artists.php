@@ -1,49 +1,204 @@
+
+  <?php
+    include "head.php";
+  ?>
+
 <?php
-    include_once "base/head.php";
-    include_once "base/nav.php";
+    include "nav.php";
 ?>
 
-<!-- Section One -->
-<div style="background-image: url('image/cover1.jpg');background-position: center;background-attachment: fixed;background-size: cover;height:500px"
-    class="jumbotron text-left " style="background-color: white;">
-    <div class="container">
-        <h1 style="text-transform: uppercase;"> <span style="color:white;">Welcome From YMT</span> <span
-                class="secondary-text">Art Gallery</span></h1>
-        <p style="color:white;"> <b> Resize this responsive page to see the effect!</b> </p>
-    </div>
-</div>
+<section data-bs-version="5.1" class="team2 cid-t7w48wCL46" xmlns="http://www.w3.org/1999/html" id="team2-11" style="background-color:gray !important">
+    
 
-<div class="container">
-    <div class="row">
-        <?php
-                    $sql = "SELECT id,name,image FROM artist ORDER BY id DESC";
-                    $result = mysqli_query($database_connection, $sql);
-                    if($result){
-                        foreach($result as $r){
-                            ?>
-         <div class="col-md-4 col-sm-6 col-xs-12" style="margin-top:30px">
-            <div class="card">
-                <img class="card-img-top" src="image/upload/<?php echo $r['image'] ?>" style="height:400px" alt="Card image">
-                <div class="card-body">
-                    <h4 class="card-title"><?php echo $r['name'] ?></h4>
-                  
-                    <form action="artist-details.php" method="post" >
-                                    <input type="hidden" name="id" value="<?php echo $r['id'] ?>" >
-                                    <input  class="btn btn-primary btn-block" type="submit" name="detail" value="View Detail">
-                                </form>
+    
+    
+    <div class="container" >
+        <div class="card">
+            <div class="card-wrapper">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-4">
+                        <div class="image-wrapper">
+                            <img src="assets/images/team1.jpg" alt="Mobirise Website Builder">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md">
+                        <div class="card-box">
+                            <h5 class="card-title mbr-fonts-style m-0 mb-3 display-5">
+                                <strong>John Smith</strong>
+                            </h5>
+                            <h6 class="card-subtitle mbr-fonts-style mb-3 display-4">
+                                <strong>Programmer</strong>
+                            </h6>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                Themes in the Mobirise website builder offer multiple blocks: intros, sliders,
+                                galleries, forms, articles, and so on. Start a project and click on the red plus buttons
+                                to see the blocks available for your theme.
+                            </p>
+                            <div class="social-row display-7">
+                                <div class="soc-item">
+                                    <a href="https://www.facebook.com/Mobirise/" target="_blank">
+                                        <span class="mbr-iconfont socicon socicon-facebook"></span>
+                                    </a>
+                                </div>
+                                <div class="soc-item">
+                                    <a href="https://twitter.com/mobirise" target="_blank">
+                                        <span class="mbr-iconfont socicon socicon-twitter"></span>
+                                    </a>
+                                </div>
+                                <div class="soc-item">
+                                    <a href="https://instagram.com/mobirise" target="_blank">
+                                        <span class="mbr-iconfont socicon socicon-instagram"></span>
+                                    </a>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-       
-        <?php
-                        }
-                    }
-                ?>
-
-       
+        <div class="card">
+            <div class="card-wrapper">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-4">
+                        <div class="image-wrapper">
+                            <img src="assets/images/team2.jpg" alt="Mobirise Website Builder">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md">
+                        <div class="card-box">
+                            <h5 class="card-title mbr-fonts-style m-0 mb-3 display-5">
+                                <strong>Ann Brown</strong>
+                            </h5>
+                            <h6 class="card-subtitle mbr-fonts-style mb-3 display-4">
+                                <strong>Manager</strong>
+                            </h6>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                Themes in the Mobirise website builder offer multiple blocks: intros, sliders,
+                                galleries, forms, articles, and so on. Start a project and click on the red plus buttons
+                                to see the blocks available for your theme.
+                            </p>
+                            <div class="social-row display-7">
+                                <div class="soc-item">
+                                    <a href="https://www.facebook.com/Mobirise/" target="_blank">
+                                        <span class="mbr-iconfont socicon socicon-facebook"></span>
+                                    </a>
+                                </div>
+                                <div class="soc-item">
+                                    <a href="https://twitter.com/mobirise" target="_blank">
+                                        <span class="mbr-iconfont socicon socicon-twitter"></span>
+                                    </a>
+                                </div>
+                                <div class="soc-item">
+                                    <a href="https://instagram.com/mobirise" target="_blank">
+                                        <span class="mbr-iconfont socicon socicon-instagram"></span>
+                                    </a>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-wrapper">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-4">
+                        <div class="image-wrapper">
+                            <img src="assets/images/team1.jpg" alt="Mobirise Website Builder">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md">
+                        <div class="card-box">
+                            <h5 class="card-title mbr-fonts-style m-0 mb-3 display-5">
+                                <strong>John Smith</strong>
+                            </h5>
+                            <h6 class="card-subtitle mbr-fonts-style mb-3 display-4">
+                                <strong>Programmer</strong>
+                            </h6>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                Themes in the Mobirise website builder offer multiple blocks: intros, sliders,
+                                galleries, forms, articles, and so on. Start a project and click on the red plus buttons
+                                to see the blocks available for your theme.
+                            </p>
+                            <div class="social-row display-7">
+                                <div class="soc-item">
+                                    <a href="https://www.facebook.com/Mobirise/" target="_blank">
+                                        <span class="mbr-iconfont socicon socicon-facebook"></span>
+                                    </a>
+                                </div>
+                                <div class="soc-item">
+                                    <a href="https://twitter.com/mobirise" target="_blank">
+                                        <span class="mbr-iconfont socicon socicon-twitter"></span>
+                                    </a>
+                                </div>
+                                <div class="soc-item">
+                                    <a href="https://instagram.com/mobirise" target="_blank">
+                                        <span class="mbr-iconfont socicon socicon-instagram"></span>
+                                    </a>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-wrapper">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-4">
+                        <div class="image-wrapper">
+                            <img src="assets/images/team2.jpg" alt="Mobirise Website Builder">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md">
+                        <div class="card-box">
+                            <h5 class="card-title mbr-fonts-style m-0 mb-3 display-5">
+                                <strong>Ann Brown</strong>
+                            </h5>
+                            <h6 class="card-subtitle mbr-fonts-style mb-3 display-4">
+                                <strong>Manager</strong>
+                            </h6>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                Themes in the Mobirise website builder offer multiple blocks: intros, sliders,
+                                galleries, forms, articles, and so on. Start a project and click on the red plus buttons
+                                to see the blocks available for your theme.
+                            </p>
+                            <div class="social-row display-7">
+                                <div class="soc-item">
+                                    <a href="https://www.facebook.com/Mobirise/" target="_blank">
+                                        <span class="mbr-iconfont socicon socicon-facebook"></span>
+                                    </a>
+                                </div>
+                                <div class="soc-item">
+                                    <a href="https://twitter.com/mobirise" target="_blank">
+                                        <span class="mbr-iconfont socicon socicon-twitter"></span>
+                                    </a>
+                                </div>
+                                <div class="soc-item">
+                                    <a href="https://instagram.com/mobirise" target="_blank">
+                                        <span class="mbr-iconfont socicon socicon-instagram"></span>
+                                    </a>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+    
+</section>
 
-<?php
-    include_once "base/footer.php";
-?>
+
+
+    <?php
+    include "footer.php";
+  ?>

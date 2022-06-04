@@ -97,10 +97,10 @@
                                     <input type="color" class="form-control" placeholder="" name="text_color" value="<?php echo $r['text_color'] ?>">
                                     <br>
 
-                                    <label for="">Text Background Color</label>
+                                    <!-- <label for="">Text Background Color</label>
                                     <input type="color" class="form-control" placeholder="" name="text_bg_color" value="<?php echo $r['text_bg_color'] ?>">
 
-                                    <br> <br>
+                                    <br> <br> -->
 
                                     <h3>Button Section</h3>
 
@@ -111,6 +111,23 @@
                                     <input type="text" name="button_link" class="form-control"
                                         placeholder="Enter Button Link" value="<?php echo $r['button_link'] ?>">
                                     <br> <br>
+
+                                    <h3> Options </h3>
+
+                                    <input type="text" name="opacity" class="form-control"
+                                        placeholder="Enter Opacity Value Between 0 and 1" value="<?php echo $r['opacity'] ?>"> 
+                                    <br>
+
+                                    <input type="number" name="width" class="form-control"
+                                        placeholder="Enter Width By %" value="<?php echo $r['width'] ?>"> 
+                                    <br>
+
+                                    <select class="form-control" name="text_align" id="">
+                                        <option value="left">Left</option>
+                                        <option value="right">Right</option>
+                                        <option value="center">Center</option>
+                                    </select>
+                                    <br>
                                     <?php
                                             }
                                         }

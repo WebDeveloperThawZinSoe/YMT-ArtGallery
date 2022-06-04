@@ -295,8 +295,11 @@
        $button_color = htmlspecialchars($_POST["button_color"]);
        $button_bg_color = htmlspecialchars($_POST["button_bg_color"]);
        $display = htmlspecialchars($_POST["display"]);
+       $opacity = htmlspecialchars($_POST["opacity"]);
+       $width = htmlspecialchars($_POST["width"]);
+       $text_align = htmlspecialchars($_POST["text_align"]);
 
-       $sql = "UPDATE home_page SET title='$title',title_size='$title_size',title_color='$title_color',bg_color='$bg_color',text='$text',text_size='$text_size',text_color='$text_color',text_bg_color='$text_bg_color',button_text='$button_text',button_link='$button_link',button_color='$button_color',button_bg_color='$button_bg_color',status='$display' ";
+       $sql = "UPDATE home_page SET title='$title',title_size='$title_size',title_color='$title_color',bg_color='$bg_color',text='$text',text_size='$text_size',text_color='$text_color',text_bg_color='$text_bg_color',button_text='$button_text',button_link='$button_link',button_color='$button_color',button_bg_color='$button_bg_color',status='$display',opacity='$opacity',width='$width',text_align='$text_align' ";
 
         $result = mysqli_query($database_connection,$sql);
 

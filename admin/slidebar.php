@@ -151,9 +151,15 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="maintain_mode.php" class="nav-link">
                       <i class="far fa-dot-circle nav-icon"></i>
                       <p>Maintain Mode</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="home.php" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>Home Page</p>
                     </a>
                   </li>
                   <li class="nav-item">

@@ -278,4 +278,35 @@
         header("location:overall.php");
        }
     }
+
+
+    /* Home Page */
+    if(isset($_POST["home_page"])){
+       $title = htmlspecialchars($_POST["title"]);
+       $title_size = htmlspecialchars($_POST["title_size"]);
+       $title_color = htmlspecialchars($_POST["title_color"]);
+       $bg_color = htmlspecialchars($_POST["bg_color"]);
+       $text = htmlspecialchars($_POST["text"]);
+       $text_size = htmlspecialchars($_POST["text_size"]);
+       $text_color = htmlspecialchars($_POST["text_color"]);
+       $text_bg_color = htmlspecialchars($_POST["text_bg_color"]);
+       $button_text = htmlspecialchars($_POST["button_text"]);
+       $button_link = htmlspecialchars($_POST["button_link"]);
+       $button_color = htmlspecialchars($_POST["button_color"]);
+       $button_bg_color = htmlspecialchars($_POST["button_bg_color"]);
+       $display = htmlspecialchars($_POST["display"]);
+
+       $sql = "UPDATE home_page SET title='$title',title_size='$title_size',title_color='$title_color',bg_color='$bg_color',text='$text',text_size='$text_size',text_color='$text_color',text_bg_color='$text_bg_color',button_text='$button_text',button_link='$button_link',button_color='$button_color',button_bg_color='$button_bg_color',status='$display' ";
+
+        $result = mysqli_query($database_connection,$sql);
+
+        if($result){
+            $_SESSION["success"] = " Home Page Update Success";
+            header("location:home.php");
+           }else{
+            $_SESSION["error"] = "  Home Page Update Fail";
+            header("location:home.php");
+           }
+
+    }
 ?>

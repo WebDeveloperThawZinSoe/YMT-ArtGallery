@@ -36,7 +36,7 @@
                     if($result){
                         foreach($result as $r){
                             ?>
-                        <form   action="artist-details.php" method="post">
+                        <form action="artists_detail.php" method="post" enctype="multipart/form">
                             <input type="hidden" name="id" value="<?php echo $r['id'] ?>">
                             <input  class="dropdown-item text-white " type="submit" id="nav-style" name="detail" style=":hover" value="<?php echo $r['name'] ?>">
                         </form>

@@ -63,10 +63,47 @@
             <div class="item features-image сol-12 col-md-6 col-lg-6">
                 <div class="item-wrapper">
                     <div class="item-img">
-                        <img src="image/upload/<?php echo $rr['image'] ?>" alt="<?php echo $rr['title']?>">
+                        <a href="#myModal<?php echo $rr['id'] ?>" target="_blank" data-bs-toggle="modal">
+                            <img src="image/upload/<?php echo $rr['image'] ?>" alt="<?php echo $rr['title']?>"> </a>
                     </div>
 
 
+                </div>
+            </div>
+            <div id="myModal<?php echo $rr['id'] ?>" class="modal fade">
+            <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title"><?php echo $rr['title'] ?></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="image/upload/<?php echo $rr['image'] ?>" class="img-responsive" alt="">
+                            <p><?php echo $rr['description'] ?></p>
+                            <p class=""><b><?php echo $rr['price'] ?> MMKS</b>
+                                <?php
+                            $status = $rr['status'];
+                            if($status == 0){
+
+                                ?>
+                            <p style="color: green;"> For Sell </p>
+
+                            <?php
+
+                            }else if($status == 1){
+                                ?>
+                            <p style="color: red;"> Sold Out </p>
+                            <?php
+                            }
+                        ?>
+                            </p>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                    </div>
                 </div>
             </div>
             <?php
@@ -77,6 +114,7 @@
         </div>
     </div>
 </section>
+
 
 
 <?php

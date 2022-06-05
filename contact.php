@@ -30,7 +30,7 @@ swal("Mail Send Success . Admin with will reply within 24hours.", "", "success")
             foreach($result as $r){
                 $image = $r['image'];
 ?>
-<section data-bs-version="5.1" class="header2 cid-t7bNn4S3KO mbr-fullscreen mbr-parallax-background" id="header2-a">
+<!-- <section data-bs-version="5.1" class="header2 cid-t7bNn4S3KO mbr-fullscreen mbr-parallax-background" id="header2-a">
 
 
 
@@ -47,7 +47,7 @@ swal("Mail Send Success . Admin with will reply within 24hours.", "", "success")
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <section data-bs-version="5.1" class="contacts2 cid-t7bNv6lOnP" id="contacts2-c">
     <!---->

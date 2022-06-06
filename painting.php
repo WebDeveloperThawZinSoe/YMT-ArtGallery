@@ -18,7 +18,7 @@
         </div>
         <div class="row mt-4">
             <?php
-                                    $sql = "SELECT * FROM posts ORDER BY id DESC LIMIT 10";
+                                    $sql = "SELECT * FROM posts ORDER BY id DESC ";
                                     $result = mysqli_query($database_connection,$sql);
                                     if($result){
                                         foreach($result as $r){

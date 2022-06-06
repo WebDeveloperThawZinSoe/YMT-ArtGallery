@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2022 at 09:45 AM
+-- Generation Time: Jun 06, 2022 at 09:06 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -40,8 +40,9 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`id`, `name`, `password`, `status`, `create_date`) VALUES
-(18, 'admin', 'ThdWpyewrPpVI', 0, '2022-05-21 20:22:52'),
-(19, 'thaw zin soe', 'ThtIJz9FnwURk', 0, '2022-05-22 07:53:42');
+(21, 'admin', 'ThdWpyewrPpVI', 0, '2022-06-03 16:46:57'),
+(22, 'tester', 'ThtIJz9FnwURk', 0, '2022-06-03 16:47:10'),
+(23, 'thaw', 'ThtIJz9FnwURk', 0, '2022-06-03 16:47:16');
 
 -- --------------------------------------------------------
 
@@ -89,12 +90,9 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `title`, `phone`, `message`, `create_date`) VALUES
-(7, 'Thaw Zin Soe', '09403077739', 'No 9/689\r\nShwepadar Street , East Dagon', '2022-05-09'),
-(8, 'Thiri San', '09251016448', 'North Dangon', '2022-05-09'),
-(9, 'Tester', '199', 'This is testing\r\n', '2022-05-09'),
-(10, 'Baby Thaw', '111', 'Testing', '2022-05-09'),
-(11, '&lt;script&gt; alert(1) &lt;/script&gt;', '1111', '&lt;script&gt; alert(1) &lt;/script&gt;', '2022-05-12'),
-(12, 'Testing ', '09403077739', 'No 9/689\r\nShwepadar Street , East Dagon', '2022-05-21 20:31:54');
+(16, 'This is Testing', '09403077739', 'New UI Testing', '2022-06-01 19:23:48'),
+(17, 'This is Testing2', '095194698', 'This si New UI 2', '2022-06-01 19:24:07'),
+(18, 'admin', '09403077739', '123', '2022-06-03 16:27:24');
 
 -- --------------------------------------------------------
 
@@ -108,15 +106,16 @@ CREATE TABLE `contact_page` (
   `image` varchar(225) NOT NULL,
   `content_text` text NOT NULL,
   `map` text NOT NULL,
-  `address` text NOT NULL
+  `address` text NOT NULL,
+  `working_hr` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `contact_page`
 --
 
-INSERT INTO `contact_page` (`main_text`, `secondary_text`, `image`, `content_text`, `map`, `address`) VALUES
-('WELCOME FROM YMT ART GALLERY', 'Contact Page', '97_images (4).jfif', 'Looking for inspiration for your Contact Us page? See these 39 amazing examples from ecommerce, SaaS, agencies, and other brands.', '9/689 East Dagon Yangon', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15276.304635496479!2d96.12119426977537!3d16.822577499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c19594833192b5%3A0xc1cb7786f279825e!2sKBTC%20University!5e0!3m2!1sen!2smm!4v1652402271157!5m2!1sen!2smm\" width=\"100%\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>');
+INSERT INTO `contact_page` (`main_text`, `secondary_text`, `image`, `content_text`, `map`, `address`, `working_hr`) VALUES
+('WELCOME FROM YMT ART GALLERY', 'Contact Page', '23_jess-bailey-q10VITrVYUM-unsplash.jpg', 'Looking for inspiration for your Contact Us page? See these 39 amazing examples from ecommerce, SaaS, agencies, and other brands.', '9/689 East Dagon Yangon', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15276.304635496479!2d96.12119426977537!3d16.822577499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c19594833192b5%3A0xc1cb7786f279825e!2sKBTC%20University!5e0!3m2!1sen!2smm!4v1652402271157!5m2!1sen!2smm\" width=\"100%\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', '');
 
 -- --------------------------------------------------------
 
@@ -128,6 +127,55 @@ CREATE TABLE `dasktop_style` (
   `background_color` varchar(255) NOT NULL,
   `color` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home`
+--
+
+CREATE TABLE `home` (
+  `title` varchar(255) NOT NULL DEFAULT 'a',
+  `subtitle` varchar(255) NOT NULL DEFAULT 'a',
+  `text` text NOT NULL DEFAULT 'a',
+  `color` varchar(255) NOT NULL DEFAULT 'a',
+  `bg-color` varchar(255) NOT NULL DEFAULT 'a',
+  `btn-text` varchar(255) NOT NULL DEFAULT 'a',
+  `btn-link` varchar(255) NOT NULL DEFAULT 'a'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home_page`
+--
+
+CREATE TABLE `home_page` (
+  `title` varchar(255) NOT NULL,
+  `title_size` varchar(255) NOT NULL,
+  `title_color` varchar(255) NOT NULL,
+  `bg_color` varchar(255) NOT NULL,
+  `text` varchar(255) NOT NULL,
+  `text_size` varchar(255) NOT NULL,
+  `text_color` varchar(255) NOT NULL,
+  `text_bg_color` varchar(255) NOT NULL,
+  `button_text` varchar(255) NOT NULL,
+  `button_link` varchar(255) NOT NULL,
+  `button_color` varchar(255) NOT NULL,
+  `button_bg_color` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `opacity` varchar(255) NOT NULL,
+  `width` varchar(255) NOT NULL,
+  `text_align` varchar(255) NOT NULL,
+  `div_align` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `home_page`
+--
+
+INSERT INTO `home_page` (`title`, `title_size`, `title_color`, `bg_color`, `text`, `text_size`, `text_color`, `text_bg_color`, `button_text`, `button_link`, `button_color`, `button_bg_color`, `status`, `opacity`, `width`, `text_align`, `div_align`) VALUES
+('This is Testing', '30', '#000000', '#ffffff', 'This is another testing', '20', '#000000', '', 'Do It', '#', '', '', '', '1', '40', 'left', '');
 
 -- --------------------------------------------------------
 
@@ -144,7 +192,7 @@ CREATE TABLE `logo` (
 --
 
 INSERT INTO `logo` (`name`) VALUES
-('99_logo.jpg');
+('85_logo-old.jpg');
 
 -- --------------------------------------------------------
 
@@ -161,7 +209,17 @@ CREATE TABLE `logo_style` (
 --
 
 INSERT INTO `logo_style` (`style`) VALUES
-('rounded-circle');
+('img-thumbnail');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `maintain_mode`
+--
+
+CREATE TABLE `maintain_mode` (
+  `status` int(10) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -227,10 +285,7 @@ INSERT INTO `posts` (`id`, `title`, `artist_id`, `category_id`, `image`, `descri
 (6, 'The Experimental Printmaker', '8', NULL, '41_unnamed.jpg', 'When Rembrandt first took up printmaking in the late 1620s, prints were characterized by a careful system of stylized lines used by engravers from Albrecht Dürer (German, 1471–1528) to Hendrick Goltzius (Dutch, 1558–1616). ', '199999', 0, '2022-05-12'),
 (7, 'Remember when Eve bit into the…fig?!', '10', NULL, '68_21f9b3d0-79cd-4af1-9478-30f0cb936c04bfa5c6b93cc280484a_Forbidden_fruit.jpg', 'A Detail You May Not Have Noticed in Michelangelo’s Sistine Chapel Fresco', '3000', 1, '2022-05-12'),
 (8, 'The master and Michelangelo', '7', NULL, '61_images (2).jfif', 'This is the story of three great cities of the Italian Renaissance, two exceptional artists and one revolutionary new medium. Michelangelo Buonarroti was from Florence, where drawing – disegno – was considered the father of all arts. Sebastiano del Piombo, ten years younger, came from Venice, where cross-continental trade brought rare minerals and pigments to artists who became masters of colour – colorito. The two men met where all roads meet, in Rome.', '12000', 0, '2022-05-12'),
-(9, 'Le Bassin aux nymphéas', '8', NULL, '97_restricted.jfif', 'Le Bassin aux nymphéas (Water Lily Pond, 1919), a celebrated work from Charles Monet’s iconic Water Lilies series of paintings, was sold for near $70.4 million (€58.3 million) in New York on Tuesday.', '3000', 0, '2022-05-12'),
-(10, 'Monets art garden', '8', NULL, '1_download (8).jfif', 'Many of the flowers and trees Monet planted in his garden were exotic specimens that were becoming popular in France at the beginning of the 20th century.', '18000', 1, '2022-05-12'),
-(11, 'Painting as a patriotic duty', '7', NULL, '94_57482880_401.jpg', 'Monet referred to such works as great decorations intended to distract from the suffering caused by the war. The day after the armistice of November 11, 1918, Monet donated two large-scale water lily works to the French state as a symbol of peace', '18500', 1, '2022-05-12'),
-(12, 'A cottage on a rock', '7', NULL, '9_37221920_303.jpg', 'Like many other of Claude Monets works this 1882 painting depicting a cottage is dominated by water. The sea is rough and the wind blows through the bushes surrounding the modest hut. The colors are earthy and heavy. But Monets brush works quickly, eternalizing a fleeting moment in nature.', '18500', 1, '2022-05-12');
+(9, 'Le Bassin aux nymphéas', '8', NULL, '97_restricted.jfif', 'Le Bassin aux nymphéas (Water Lily Pond, 1919), a celebrated work from Charles Monet’s iconic Water Lilies series of paintings, was sold for near $70.4 million (€58.3 million) in New York on Tuesday.', '3000', 0, '2022-05-12');
 
 -- --------------------------------------------------------
 
@@ -294,7 +349,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `artist`
@@ -306,7 +361,7 @@ ALTER TABLE `artist`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `media`

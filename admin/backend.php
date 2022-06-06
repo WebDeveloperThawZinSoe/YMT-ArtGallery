@@ -181,6 +181,40 @@
         }
     }
 
+    /* Delete Post */
+    if(isset($_POST["post_delete"])){
+        $id = $_POST["id"];
+        $sql = "DELETE FROM  posts WHERE id=$id";
+        $result = mysqli_query($database_connection,$sql);
+        if($result){
+            $_SESSION["success"] = "Post Delete  Success";
+            header("location:see_posts.php");
+        }else{
+            $_SESSION["error"] = "Post Delete  Fail";
+            header("location:see_posts.php");
+        }
+    }
+
+    /* Update Post */
+    if(isset($_POST["post_update"])){
+        $id = htmlspecialchars($_POST["id"]);
+        $title = htmlspecialchars($_POST['title']);
+        $artists = htmlspecialchars($_POST['artists']);
+        $price =  htmlspecialchars($_POST['price']);
+        $status = htmlspecialchars($_POST['status']);
+        $description = htmlspecialchars($_POST['description']);
+        image_filter($_FILES["image"],"posts.php");
+        $now = date('Y-m-d H:i:s');
+        $sql = "UPDATE posts SET title='$title',artist_id='$artists',image='$unique_file_name',description='$description',price='$price',status='$status' WHERE id=$id";
+        $result = mysqli_query($database_connection,$sql);
+        if($result){
+            $_SESSION["success"] = "Post Update  Success";
+            header("location:see_posts.php");
+        }else{
+            $_SESSION["error"] = "Post Update  Fail";
+            header("location:see_posts.php");
+        }
+    }
     /* Create Media */
     if(isset($_POST["media_create"])){
        $media = $_POST["media"];

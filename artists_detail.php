@@ -64,7 +64,7 @@
                 <div class="item-wrapper">
                     <div class="item-img">
                         <a href="#myModal<?php echo $rr['id'] ?>" target="_blank" data-bs-toggle="modal">
-                            <img src="image/upload/<?php echo $rr['image'] ?>" alt="<?php echo $rr['title']?>"> </a>
+                            <img src="image/upload/<?php echo $rr['image'] ?>" alt="<?php echo $rr['title']?>" style="height:100% !important"> </a>
                     </div>
 
 

@@ -1,0 +1,111 @@
+.ignition-demo-instagram .ignition-instagram-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  flex-flow: row nowrap;
+}
+
+.ignition-demo-instagram.ignition-instagram-grid .ignition-instagram-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ignition-demo-instagram.ignition-instagram-grid .ignition-instagram-list-item {
+  display: flex;
+  flex: 1 1 33.333%;
+  float: none;
+  height: auto;
+}
+
+.ignition-demo-instagram.ignition-instagram-grid .ignition-instagram-list-item a {
+  background-size: contain;
+  flex: 1;
+  position: relative;
+  height: 0 !important;
+  padding-bottom: 100%;
+}
+
+.ignition-demo-instagram.ignition-instagram-carousel .ignition-instagram-list-item,
+.ignition-demo-instagram.ignition-instagram-static-feed .ignition-instagram-list-item {
+  display: flex;
+  flex: 1 1 100%;
+  float: none;
+  height: auto;
+}
+
+.ignition-demo-instagram.ignition-instagram-carousel .ignition-instagram-list-item a,
+.ignition-demo-instagram.ignition-instagram-static-feed .ignition-instagram-list-item a {
+  background-size: contain;
+  flex: 1;
+  position: relative;
+  height: 0 !important;
+  padding-bottom: 100%;
+}
+
+.ignition-demo-instagram.ignition-instagram-carousel .ignition-instagram-list {
+  display: none;
+}
+
+.ignition-demo-instagram.ignition-instagram-carousel .ignition-instagram-list.slick-initialized {
+  display: block;
+}
+
+.ignition-demo-instagram.ignition-instagram-carousel .ignition-instagram-list.slick-initialized .slick-arrow {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  top: 50%;
+  margin-top: -18px;
+  z-index: 10;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.ignition-demo-instagram.ignition-instagram-carousel .ignition-instagram-list.slick-initialized .slick-arrow.slick-arrow-prev {
+  left: 0;
+  text-indent: -3px;
+}
+
+.ignition-demo-instagram.ignition-instagram-carousel .ignition-instagram-list.slick-initialized .slick-arrow.slick-arrow-next {
+  right: 0;
+  text-indent: -1px;
+}
+
+.ignition-demo-instagram.ignition-instagram-carousel .ignition-instagram-list.slick-initialized .slick-arrow svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
+}
+
+.ignition-demo-instagram.ignition-instagram-carousel .ignition-instagram-list .slick-track {
+  display: flex;
+  flex-direction: row;
+}
+
+.ignition-demo-instagram.ignition-instagram-static-feed .ignition-instagram-list {
+  display: flex;
+}
+
+@media (max-width: 991px) {
+  .ignition-demo-instagram.ignition-instagram-static-feed .ignition-instagram-list {
+    flex-flow: row wrap;
+  }
+
+  .ignition-demo-instagram.ignition-instagram-static-feed .ignition-instagram-list .ignition-instagram-list-item {
+    flex-basis: 16.6666%;
+  }
+}
+
+@media (max-width: 575px) {
+  .ignition-demo-instagram.ignition-instagram-static-feed .ignition-instagram-list .ignition-instagram-list-item {
+    flex-basis: 25%;
+  }
+}

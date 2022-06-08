@@ -1,0 +1,19 @@
+https://www.instagram.com/p/CdQsoM5vCrb/?igshid=YmMyMTA2M2Y=
+
+
+https://www.facebook.com/yemyat.amz
+
+https://sargagallery.com/artist.aspx?art=20
+
+https://direkkingnok.wixsite.com/watercolor
+
+https://epicbootstrap.com/snippets/lightbox-gallery
+
+https://bootsnipp.com/snippets/N6vrp
+
+
+ymt
+ymt@gmail.com
+J9DeeXQEExmgR4&AV@K^(GZ%
+
+SELECT `title`, `title_size`, `title_color`, `bg_color`, `text`, `text_color`, `text_bg_color`, `button_text`, `button_link`, `button_color`, `button_bg_color` FROM `home_page` WHERE 1
